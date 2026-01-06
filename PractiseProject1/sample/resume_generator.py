@@ -1,0 +1,56 @@
+# Save a backend developer resume in simple text format
+
+resume_text = """
+Name: John Doe
+Email: john.doe@example.com
+Phone: (123) 456-7890
+LinkedIn: linkedin.com/in/johndoe
+GitHub: github.com/johndoe
+Location: City, State
+
+Education:
+- B.Sc. in Computer Science, University of Example, 2016
+
+Experience:
+- Senior Backend Developer at XYZ Tech Solutions, June 2020 – Present
+  - Designed and implemented RESTful APIs for high-traffic web applications.
+  - Developed microservices architecture using Node.js and Docker.
+  - Optimized database queries, reducing average API response time by 30%.
+  - Integrated third-party APIs for payment gateways and analytics platforms.
+  - Mentored junior developers and conducted code reviews.
+
+- Backend Developer at ABC Software, May 2018 – May 2020
+  - Built and maintained backend services using Spring Boot and PostgreSQL.
+  - Implemented authentication and authorization using JWT and OAuth 2.0.
+  - Developed caching strategies with Redis to improve performance.
+  - Collaborated with frontend and QA teams for seamless integration.
+
+- Junior Backend Developer at TechStart, Jan 2016 – Apr 2018
+  - Assisted in developing server-side logic for internal and client-facing applications.
+  - Wrote SQL queries, stored procedures, and optimized database performance.
+  - Participated in Agile sprints and backlog refinement.
+
+Skills:
+- Languages: Java, Python, Node.js, PHP
+- Frameworks: Spring Boot, Express.js, Django, Flask
+- Databases: MySQL, PostgreSQL, MongoDB, Redis
+- APIs: REST, GraphQL, gRPC
+- Cloud & DevOps: AWS (EC2, S3, Lambda), Docker, Kubernetes, Jenkins
+- Tools: Git, GitHub, GitLab, Postman, JIRA, Agile/Scrum
+
+Certifications:
+- AWS Certified Developer – Associate
+- Oracle Java SE 11 Developer
+- Docker & Kubernetes Certified Associate
+
+Key Projects:
+- E-commerce Platform Backend: APIs and microservices for payment, catalog, and orders.
+- Real-time Chat Application: Scalable backend with WebSocket support and Redis caching.
+- Analytics Dashboard: RESTful APIs aggregating data from multiple sources for real-time insights.
+"""
+
+# Save to a .txt file
+with open("backend_resume.txt", "w") as file:
+    file.write(resume_text)
+
+print("Resume saved as backend_resume.txt")
