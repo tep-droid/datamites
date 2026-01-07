@@ -8,23 +8,22 @@ Location: City, State
 
 Education:
 - B.Sc. in Computer Science, University of Example, 2016
-- M.Sc. in Computer Science, University of Example, 2018
 
 Experience:
-- Senior Backend Developer at XYZ Tech Solutions, June 2020 – Present - 5 years
+- Senior Backend Developer at XYZ Tech Solutions, June 2020 – Present
   - Designed and implemented RESTful APIs for high-traffic web applications.
   - Developed microservices architecture using Node.js and Docker.
   - Optimized database queries, reducing average API response time by 30%.
   - Integrated third-party APIs for payment gateways and analytics platforms.
   - Mentored junior developers and conducted code reviews.
 
-- Backend Developer at ABC Software, May 2018 – May 2020 - 1 year
+- Backend Developer at ABC Software, May 2018 – May 2020
   - Built and maintained backend services using Spring Boot and PostgreSQL.
   - Implemented authentication and authorization using JWT and OAuth 2.0.
   - Developed caching strategies with Redis to improve performance.
   - Collaborated with frontend and QA teams for seamless integration.
 
-- Junior Backend Developer at TechStart, Jan 2016 – Apr 2018 - 6 months
+- Junior Backend Developer at TechStart, Jan 2016 – Apr 2018
   - Assisted in developing server-side logic for internal and client-facing applications.
   - Wrote SQL queries, stored procedures, and optimized database performance.
   - Participated in Agile sprints and backlog refinement.

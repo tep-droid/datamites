@@ -1,13 +1,24 @@
 # rule_based_scoring/skill_matching.py
 
-def match_skills(resume_skills, jd_skill_dict):
-    return sum(jd_skill_dict.get(skill, 0) for skill in resume_skills)
+def resume_score(resume_skills, jd_skills):
+    # Count how many JD skills are found in the resume
+    matched_skills = []
+    for skill in jd_skills:
+        if skill in resume_skills:
+            matched_skills.append(skill)
 
+    score = len(matched_skills)  # raw score = number of matched skills
+    total_jd_skills = len(jd_skills)  # total JD skills
+            # Calculate percentage of JD skills matched
+    if total_jd_skills > 0:
+        score_percentage = (score / total_jd_skills) * 100
+    else:
+        score_percentage = 0
 
-def normalized_score(resume_skills, jd_skill_dict):
-    max_score = sum(jd_skill_dict.values())
-    score = match_skills(resume_skills, jd_skill_dict)
-    return (score / max_score * 100) if max_score else 0
+    print("Matched skills:", matched_skills)
+    print("Total JD skills:", total_jd_skills)
+
+    return score, score_percentage
 
 
 def pros_cons(resume_skills, jd_skill_dict):

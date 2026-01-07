@@ -1,4 +1,5 @@
 import streamlit as st
+
 from textPreprocessing.text_preprocessing_resume import *
 from textPreprocessing.jd_preprcosseing import *
 st.title("Resume Score Predictor")
@@ -45,18 +46,21 @@ if jd_text and uploaded_file is not None:
 
 # scoring
 from rule_based_scoring.skill_matching import *
+from sample import *
 
 # Create JD skill dictionary with weights (for scoring)
 if jd_text and uploaded_file is not None:
     jd_skill_dict = {skill: 5 for skill in jd_normalised_skills}
     resume_skill = normalised_words
 
-    score = match_skills(resume_skill, jd_skill_dict)
-    percentage = normalized_score(resume_skill, jd_skill_dict)
+    score, score_percentage = resume_score(normalised_words, jd_normalised_skills)
     pros, cons = pros_cons(resume_skill, jd_skill_dict)
 
-    st.write(f"### Candidate Score: {score}")
-    st.write(f"### Normalized Score: {percentage:.2f}%")
+    st.write(f"### Skills matched: {score}")
+    st.write(f"### Percentage: {score_percentage:.2f}%")
     st.write("### Pros & Cons")
     st.write(pros)
     st.write(cons)
+
+
+
