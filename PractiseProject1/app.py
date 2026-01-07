@@ -201,3 +201,34 @@ with bottom_right:
 #             st.error("Prediction failed")
 #             st.text(result.stderr)
 
+# ---------- ML via API Button ----------
+api_btn = st.button("📡 ML via API")
+
+if api_btn and jd_text and uploaded_file is not None:
+    st.info("Calling ML API...")
+
+    import requests
+
+    payload = {
+        "resume_skills": normalised_words,
+        "jd_skills": jd_normalised_skills,
+        "resume_text": content
+    }
+
+    try:
+        response = requests.post("http://127.0.0.1:8000/predict", json=payload)
+        if response.status_code == 200:
+            data = response.json()
+            # Display nicely
+            st.metric("Skills Matched", data["matched_skills"])
+            st.progress(data["match_percentage"] / 100)
+            st.write(f"**Match Percentage:** {data['match_percentage']:.2f}%")
+            st.write("### Pros")
+            st.write(data["pros"])
+            st.write("### Cons")
+            st.write(data["cons"])
+            st.metric("ML Predicted Score", f"{data['ml_prediction']}%")
+        else:
+            st.error(f"API call failed with status {response.status_code}")
+    except Exception as e:
+        st.error(f"API call error: {e}")
